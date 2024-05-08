@@ -561,13 +561,13 @@ The Control Table has two different access properties. ‘RW’ property stands 
 |    6    |     1     |   [Firmware Version](#firmware-version)   |   R   |         -         |                   -                   |                 -                 |
 |    7    |     1     |                 [ID](#id)                 |   RW   |         1         |                0 ~ 252                |                 -                 |
 |    8    |     1     |          [Baud Rate](#baud-rate)          |   RW   |         4         |                 0 ~ 4                 |                 -                 |
-|   10   |     1     |         [Drive Mode](#drive-mode)         |   RW   |         2         |                 0 ~ 3                 |                 -                 |
+|   10   |     1     |         [Drive Mode](#drive-mode)         |   RW   |         0         |                 0 ~ 3                 |                 -                 |
 |   11   |     1     |     [Operating Mode](#operating-mode)     |   RW   |         4         |                 4、17                 |                 -                 |
 |   20   |     4     |      [Homing Offset](#homing-offset)      |   RW   |         0         |           0 ~`<br>` 32,768           |             1 [count]             |
 |   31   |     1     |  [Temperature Limit](#temperature-limit)  |   RW   |         80         |                0 ~ 100                |            1 [&deg;C]            |
-|   36   |     2     |          [PWM Limit](#pwm-limit)          |   RW   |       30,000       |               0 ~ 37,500               |           0.000026 [%]           |
-|   38   |     2     |      [Current Limit](#current-limit)      |   RW   |       15,000       |               0 ~ 15,000               |            2.5177 [mA]            |
-|   40   |     4     | [Acceleration Limit](#acceleration-limit) |   RW   |     3,992,644     |             0 ~ 3,992,644             | 1 [rev/min `<sup>`2 `</sup>`] |
+|   36   |     2     |          [PWM Limit](#pwm-limit)          |   RW   |        1500        |               0 ~ 37,500               |           0.000026 [%]           |
+|   38   |     2     |      [Current Limit](#current-limit)      |   RW   |        2000        |               0 ~ 15,000               |            2.5177 [mA]            |
+|   40   |     4     | [Acceleration Limit](#acceleration-limit) |   RW   |        2000        |             0 ~ 3,992,644             | 1 [rev/min `<sup>`2 `</sup>`] |
 |   44   |     4     |     [Velocity Limit](#velocity-limit)     |   RW   |       2,000       |               0 ~ 6,000               |          0.01 [rev/min]          |
 |   48   |     4     | [Max Position Limit](#max-position-limit) |   RW   |       16,384       | -2,147,483,648 ~`<br>` 2,147,483,648 |             1 [count]             |
 |   52   |     4     | [Min Position Limit](#min-position-limit) |   RW   |      -16,384      | -2,147,483,648 ~`<br>` 2,147,483,648 |             1 [count]             |
@@ -578,14 +578,14 @@ The Control Table has two different access properties. ‘RW’ property stands 
 | :-----: | :--------: | :------------------------------------------: | :----: | :----------------: | :----------------------------------------------------: | :---------------------: |
 |   512   |     1     |         [Torque Enable](#torque-enable)         |   RW   |         0         |                         0 ~ 1                         |            -            |
 |   518   |     1     | [Hardware Error Status](#hardware-error-status) |   R   |         0         |                        0 ~ 254                        |            -            |
-|   522   |     2     |        [Profile Time](#Profile Time)        |   RW   |        2000        |                       0 ~ 65,536                       |        1 [msec]        |
+|   522   |     2     |                [Profile Time]()                |   RW   |        2000        |                       0 ~ 65,536                       |        1 [msec]        |
 |   524   |     2     |      [Velocity I Gain](#velocity-pi-gain)      |   RW   |         0         |                       0 ~ 32,767                       |            -            |
-|   526   |     2     |      [Velocity P Gain](#velocity-pi-gain)      |   RW   |        300        |                       0 ~ 32,767                       |            -            |
-|   528   |     2     |      [Position D Gain](#position-pid-gain)      |   RW   |         0         |                       0 ~ 32,767                       |            -            |
-|   530   |     2     |      [Position I Gain](#position-pid-gain)      |   RW   |        250        |                       0 ~ 32,767                       |            -            |
-|   532   |     2     |      [Position P Gain](#position-pid-gain)      |   RW   |        9000        |                       0 ~ 32,767                       |            -            |
-|   536   |     2     |  [Feedforward 2nd Gain](#feedforward-2nd-gain)  |   RW   |       20200       |                       0 ~ 32,767                       |            -            |
-|   538   |     2     |  [Feedforward 1st Gain](#feedforward-1st-gain)  |   RW   |        2020        |                       0 ~ 32,767                       |            -            |
+|   526   |     2     |      [Velocity P Gain](#velocity-pi-gain)      |   RW   |         50         |                       0 ~ 32,767                       |            -            |
+|   528   |     2     |      [Position D Gain](#position-pid-gain)      |   RW   |        050        |                       0 ~ 32,767                       |            -            |
+|   530   |     2     |      [Position I Gain](#position-pid-gain)      |   RW   |         5         |                       0 ~ 32,767                       |            -            |
+|   532   |     2     |      [Position P Gain](#position-pid-gain)      |   RW   |        2000        |                       0 ~ 32,767                       |            -            |
+|   536   |     2     |  [Feedforward 2nd Gain](#feedforward-2nd-gain)  |   RW   |        2000        |                       0 ~ 32,767                       |            -            |
+|   538   |     2     |  [Feedforward 1st Gain](#feedforward-1st-gain)  |   RW   |        150        |                       0 ~ 32,767                       |            -            |
 |   550   |     2     |          [Goal Current](#goal-current)          |   RW   |         -         |        -Current Limit(38) ~``Current Limit(38)        |       2.5177 [mA]       |
 |   552   |     4     |         [Goal Velocity](#goal-velocity)         |   RW   |         -         |       -Velocity Limit(44) ~``Velocity Limit(44)       |     0.01 [rev/min]     |
 |   556   |     4     |  [Profile Acceleration](#profile-acceleration)  |   RW   |         -         |              0 ~``Acceleration Limit(40)              |    1 [rev/min ^2^ ]    |
