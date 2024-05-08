@@ -581,7 +581,7 @@ The Control Table has two different access properties. ‘RW’ property stands 
 |   522   |     2     |                [Profile Time]()                |   RW   |        2000        |                       0 ~ 65,536                       |        1 [msec]        |
 |   524   |     2     |      [Velocity I Gain](#velocity-pi-gain)      |   RW   |         0         |                       0 ~ 32,767                       |            -            |
 |   526   |     2     |      [Velocity P Gain](#velocity-pi-gain)      |   RW   |         50         |                       0 ~ 32,767                       |            -            |
-|   528   |     2     |      [Position D Gain](#position-pid-gain)      |   RW   |        050        |                       0 ~ 32,767                       |            -            |
+|   528   |     2     |      [Position D Gain](#position-pid-gain)      |   RW   |         50         |                       0 ~ 32,767                       |            -            |
 |   530   |     2     |      [Position I Gain](#position-pid-gain)      |   RW   |         5         |                       0 ~ 32,767                       |            -            |
 |   532   |     2     |      [Position P Gain](#position-pid-gain)      |   RW   |        2000        |                       0 ~ 32,767                       |            -            |
 |   536   |     2     |  [Feedforward 2nd Gain](#feedforward-2nd-gain)  |   RW   |        2000        |                       0 ~ 32,767                       |            -            |
